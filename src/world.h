@@ -29,6 +29,6 @@ struct World
     std::vector<Sphere> spheres;
     std::vector<Light> lights;
     int scale = 15;
-    float fov = static_cast<float>(M_PI / 2.0);
-    int camera[3] = { 0, 0, 0 };
+    float fov = static_cast<float>(M_PI / 3);
+    int camera[3] = { 0, 2, 0 };
 };
