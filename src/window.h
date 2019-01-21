@@ -116,8 +116,9 @@ public:
         ImGui_ImplSDL2_NewFrame(window);
         ImGui::NewFrame();
 
+        ImGui::SetNextWindowPos(ImVec2(0, 0));
         {
-            ImGui::Begin("Menu");
+            ImGui::Begin("Menu", nullptr, ImGuiWindowFlags_AlwaysAutoResize|ImGuiWindowFlags_NoSavedSettings);
 
             ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate); ImGui::NewLine();
 
@@ -150,9 +151,10 @@ public:
             ImGui::End();
         }
 
+        ImGui::SetNextWindowPos(ImVec2(360, 0));
         {
-            ImGui::Begin("Viewport");
-            ImGui::Image((ImTextureID)texture.get_id(), ImVec2(640, 480));
+            ImGui::Begin("Viewport", nullptr, ImGuiWindowFlags_AlwaysAutoResize|ImGuiWindowFlags_NoSavedSettings);
+            ImGui::Image((ImTextureID)texture.get_id(), ImVec2(800, 600));
             ImGui::End();
         }
 
